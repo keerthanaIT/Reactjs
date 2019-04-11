@@ -1,30 +1,51 @@
 'use strict';
 
-var nameVar = 'Andrew';
-var nameVar = 'Mike';
-console.log(' ---------', nameVar);
+console.log("js file is running");
 
-var nameLet = 'Jim';
-nameLet = 'Tom';
-console.log(' -------', nameLet);
+var square = function square(x) {
+  return x * x;
+};
+console.log(square(8));
 
-var nameConst = 'Tommy';
-console.log("--------", nameConst);
+var arrowFunction = function arrowFunction(y) {
+  return y * y;
+};
 
-function getPetName() {
-  var petName = 'Blacky';
-  return petName;
+console.log(arrowFunction(10));
+
+var arrowFunction1 = function arrowFunction1(z) {
+  return z * z;
+};
+console.log(arrowFunction1(4));
+
+// Challange 1
+
+var name = 'Mike Smith';
+if (name) {
+  var firstName = name.split(' ')[0];
 }
+console.log("FirstName--------", firstName);
 
-var petName = getPetName();
-console.log("-----", petName);
+//Challange 2
 
-//Block scoping
+var arrow = function arrow(y) {
+  return y + y;
+};
 
-var fullName = 'Andrew Tom';
-var firstName = void 0;
-if (fullName) {
-  firstName = fullName.split(' ')[0];
-  console.log("--------", firstName);
-}
-console.log("------", firstName);
+console.log("arrow function output", arrow(10));
+
+//Challange 3
+
+var arrow1 = function arrow1(z) {
+  var value = z * z;
+  console.log("value inside the arrow function", value);
+};
+console.log("value outside the arrow function", arrow1(20));
+
+//Challange done
+
+var getFirstName = function getFirstName(Name) {
+  return Name.split(' ')[0];
+};
+
+console.log(getFirstName('Jon Tom'));
