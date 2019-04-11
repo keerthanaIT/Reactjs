@@ -36,16 +36,12 @@ var template = React.createElement(
   )
 );
 
-var user = {
-  name: 'Mike',
-  Age: 10,
-  Location: 'New Yolk'
-};
-
 var app = {
   title: 'Indecision App',
-  subtitle: 'This is an example'
+  subtitle: 'This is an example',
+  options: ['One', 'Two']
 };
+
 var templateThree = React.createElement(
   'div',
   null,
@@ -54,13 +50,55 @@ var templateThree = React.createElement(
     null,
     app.title + '!'
   ),
+  app.subtitle && React.createElement(
+    'p',
+    null,
+    app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? 'Here are the options' : 'No options'
+  ),
   React.createElement(
     'p',
     null,
     'Age:',
     app.subtitle
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'Item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'Teo item'
+    )
   )
 );
+
+var user = {
+  name: 'Mike',
+  Age: 26,
+  Location: 'New Yolk'
+
+};
+
+function getLocation(Location) {
+  if (Location) {
+    return React.createElement(
+      'p',
+      null,
+      'Location:',
+      Location
+    );
+  }
+}
 
 var templateTwo = React.createElement(
   'div',
@@ -68,26 +106,17 @@ var templateTwo = React.createElement(
   React.createElement(
     'h1',
     null,
-    user.name + '!!'
+    user.name ? user.name : 'Anonomys'
   ),
-  React.createElement(
-    'h1',
-    null,
-    user.name.toUpperCase()
-  ),
-  React.createElement(
+  user.Age && user.Age >= 18 && React.createElement(
     'p',
     null,
     'Age:',
     user.Age
   ),
-  React.createElement(
-    'p',
-    null,
-    'Location:',
-    user.Location
-  )
+  getLocation(user.Location)
 );
+
 var appRoot = document.getElementById('app');
 
 ReactDOM.render(templateThree, appRoot);
