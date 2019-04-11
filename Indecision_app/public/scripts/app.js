@@ -2,50 +2,45 @@
 
 console.log("js file is running");
 
-var square = function square(x) {
-  return x * x;
-};
-console.log(square(8));
-
-var arrowFunction = function arrowFunction(y) {
-  return y * y;
+var add = function add(a, b) {
+  // console.log(arguments);
+  // arrow function  not bound with arguments
+  return a + b;
 };
 
-console.log(arrowFunction(10));
+console.log(add(50, 1, 100));
 
-var arrowFunction1 = function arrowFunction1(z) {
-  return z * z;
-};
-console.log(arrowFunction1(4));
+// this keyword no bound with the arrow function
 
-// Challange 1
 
-var name = 'Mike Smith';
-if (name) {
-  var firstName = name.split(' ')[0];
-}
-console.log("FirstName--------", firstName);
+var user = {
+  name: 'Tommy',
+  cities: ['New Yolk', 'California', 'Los Angles'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
 
-//Challange 2
-
-var arrow = function arrow(y) {
-  return y + y;
+    return this.cities.map(function (city) {
+      return _this.name + ' has already lived in ' + city;
+    });
+  }
 };
 
-console.log("arrow function output", arrow(10));
+//  the above function will work only when the first is the normal function and second is the arrow function, if it changes the form of function then it will not work..
 
-//Challange 3
+console.log(user.printPlacesLived());
 
-var arrow1 = function arrow1(z) {
-  var value = z * z;
-  console.log("value inside the arrow function", value);
+//Challange area
+
+var multiplier = {
+  numbers: [10, 20, 30],
+  multiplyBy: 2,
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return number * _this2.multiplyBy;
+    });
+  }
 };
-console.log("value outside the arrow function", arrow1(20));
 
-//Challange done
-
-var getFirstName = function getFirstName(Name) {
-  return Name.split(' ')[0];
-};
-
-console.log(getFirstName('Jon Tom'));
+console.log('result of Challange task', multiplier.multiply());
