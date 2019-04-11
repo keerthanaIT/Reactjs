@@ -53,21 +53,29 @@ let count = 0;
 
 
 const addOne = () => {
-console.log('addOne');
+
+ count++;
+  renderCounterApp();
+console.log('addOne',count);
 };
 
 
 const minusOne = () => {
+  count--;
+  renderCounterApp();
 console.log('minusOne');
 };
 
 const reset = () => {
+  count=0;
+  renderCounterApp();
 console.log('reset');
 };
 
 
+const appRoot = document.getElementById('app'); 
 
-
+const renderCounterApp =() => {
 const templateTwo = (
   <div>
     <h1>Count: {count}</h1>
@@ -79,10 +87,6 @@ const templateTwo = (
 
 
 
-
-
-
-
-const appRoot = document.getElementById('app'); 
-
 ReactDOM.render(templateTwo, appRoot);
+};
+ renderCounterApp();
