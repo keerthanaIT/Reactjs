@@ -14,13 +14,34 @@ var template = (
 );
 
 
+var user = {
+  name: 'Mike',
+  Age :10,
+  Location:'New Yolk'
+}
+
+var app = {
+  title :'Indecision App',
+  subtitle: 'This is an example'
+}
+var templateThree = (
+  <div>
+    <h1>{app.title + '!'}</h1>
+    <p>Age:{app.subtitle}</p>
+  </div>
+);
+
+
+
+
 var templateTwo = (
   <div>
-    <h1>Name</h1>
-    <p>Age</p>
-    <p>Location</p>
+    <h1>{user.name + '!!'}</h1>
+    <h1>{user.name.toUpperCase()}</h1>
+    <p>Age:{user.Age}</p>
+    <p>Location:{user.Location}</p>
   </div>
 );
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(templateThree, appRoot);

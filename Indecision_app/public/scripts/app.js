@@ -1,60 +1,93 @@
-"use strict";
+'use strict';
 
 console.log("App.js is running");
 
 var template = React.createElement(
-  "div",
+  'div',
   null,
   React.createElement(
-    "h1",
+    'h1',
     null,
-    "Indecision App"
+    'Indecision App'
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    " this is example"
+    ' this is example'
   ),
   React.createElement(
-    "ol",
+    'ol',
     null,
     React.createElement(
-      "li",
+      'li',
       null,
-      " First"
+      ' First'
     ),
     React.createElement(
-      "li",
+      'li',
       null,
-      " Second"
+      ' Second'
     ),
     React.createElement(
-      "li",
+      'li',
       null,
-      " Third "
+      ' Third '
     )
   )
 );
 
-var templateTwo = React.createElement(
-  "div",
+var user = {
+  name: 'Mike',
+  Age: 10,
+  Location: 'New Yolk'
+};
+
+var app = {
+  title: 'Indecision App',
+  subtitle: 'This is an example'
+};
+var templateThree = React.createElement(
+  'div',
   null,
   React.createElement(
-    "h1",
+    'h1',
     null,
-    "Name"
+    app.title + '!'
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    "Age"
+    'Age:',
+    app.subtitle
+  )
+);
+
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    user.name + '!!'
   ),
   React.createElement(
-    "p",
+    'h1',
     null,
-    "Location"
+    user.name.toUpperCase()
+  ),
+  React.createElement(
+    'p',
+    null,
+    'Age:',
+    user.Age
+  ),
+  React.createElement(
+    'p',
+    null,
+    'Location:',
+    user.Location
   )
 );
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(templateThree, appRoot);
