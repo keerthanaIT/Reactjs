@@ -45,3 +45,31 @@ var templateTwo = (
     {getLocation(user.Location)}
   </div>
 );
+
+
+
+// user concept in src, app.js file
+
+const user = {
+  name: 'Mike',
+  Age :26,
+  Location:'New Yolk'
+ 
+};
+
+
+
+function getLocation(Location){
+  if(Location){
+    return <p>Location:{Location}</p>;
+  }
+}
+
+
+const templateTwo = (
+  <div>
+    <h1>{user.name ? user.name : 'Anonomys'}</h1>
+    {(user.Age && user.Age >= 18) && <p>Age:{user.Age}</p>}
+    {getLocation(user.Location)}
+  </div>
+);
