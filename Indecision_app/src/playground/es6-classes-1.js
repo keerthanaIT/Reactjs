@@ -14,6 +14,29 @@ getDescript(){
   return`${this.name} is ${this.age} years old.`;
 }
 }
+
+
+
+class Student extends Person {
+
+}
+
+
+
+const student = new Student('Andrew Mead',26, 'Computer Science');
+console.log(student);
+
+const otherstudent = new Student();
+console.log(otherstudent);
+
+
+
+
+
+
+
+
+
 const me = new Person("tommy", 26);
 console.log(me.getDescript());
 
