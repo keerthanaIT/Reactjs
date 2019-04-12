@@ -2,60 +2,92 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var Header = function (_React$Component) {
+  _inherits(Header, _React$Component);
 
-console.log("hi app.js is running");
+  function Header() {
+    _classCallCheck(this, Header);
 
-var Person = function () {
-  function Person() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ' Anonymus';
-    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-    _classCallCheck(this, Person);
-
-    this.name = name;
-    this.age = age;
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
   }
 
-  _createClass(Person, [{
-    key: 'getGretting',
-    value: function getGretting() {
-      return 'Hi, I am  ' + this.name + '!';
-    }
-  }, {
-    key: 'getDescript',
-    value: function getDescript() {
-      return this.name + ' is ' + this.age + ' years old.';
+  _createClass(Header, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'h1',
+          null,
+          'Indecision'
+        ),
+        React.createElement(
+          'h2',
+          null,
+          'This is a Ubundu OS Computer'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'This is From  header'
+        )
+      );
     }
   }]);
 
-  return Person;
-}();
+  return Header;
+}(React.Component);
 
-var Student = function (_Person) {
-  _inherits(Student, _Person);
+var Action = function (_React$Component2) {
+  _inherits(Action, _React$Component2);
 
-  function Student() {
-    _classCallCheck(this, Student);
+  function Action() {
+    _classCallCheck(this, Action);
 
-    return _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
   }
 
-  return Student;
-}(Person);
+  _createClass(Action, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          null,
+          'this is button'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'This is from Actions'
+        ),
+        ';'
+      );
+    }
+  }]);
 
-var student = new Student('Andrew Mead', 26, 'Computer Science');
-console.log(student);
+  return Action;
+}(React.Component);
 
-var otherstudent = new Student();
-console.log(otherstudent);
+var jsx = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Title'
+  ),
+  React.createElement(Header, null),
+  React.createElement(Action, null)
+);
 
-var me = new Person("tommy", 26);
-console.log(me.getDescript());
-
-var other = new Person();
-console.log(other.getDescript());
+ReactDOM.render(jsx, document.getElementById('app'));

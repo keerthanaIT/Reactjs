@@ -1,90 +1,48 @@
-
-console.log("App.js is running");
-
-const template = (
-  <div>
-    <h1>Indecision App</h1>
-    <p> this is example</p>
-    <ol>
-      <li> First</li>
-      <li> Second</li>
-      <li> Third </li>
-    </ol>
-  </div>
-);
-
-
-const app = {
-  title :'Indecision App',
-  subtitle: 'This is an example',
-  options:[]
-};
-
-const onFormSubmit = (e) => {
-  e.preventDefault();
-  const option = e.target.elements.option.value;
-  if(option){
-    app.options.push(option);
-    e.target.elements.option.value = "";
-    render();
+class Header extends React.Component {
+  render(){
+    return (
+    <div>
+      <h1>Indecision</h1>
+      <h2>This is a Ubundu OS Computer</h2>
+      <p>This is From  header</p>   
+    </div>
+    );
+    
   }
-console.log(app.options);
-  console.log('form submitted!');
-
-};
+}
 
 
-const onRemoveAll = () => {
-  app.options = [];
-  render();
-};
+class Action extends React.Component {
+  render(){
+    return(
+    <div>
+      <button>this is button</button>
+       <p>This is from Actions</p>;
+    </div>
+    );
+    
+  }
+}
 
 
 
 
 
-const appRoot =document.getElementById('app');
 
-const numbers = [55,101,100];
 
-const render = () => {
-const templateThree = (
+
+const jsx = (
   <div>
-    <h1>{app.title + '!'}</h1>
-    {app.subtitle && <p>{app.subtitle}</p>}
-    <p>{app.options.length > 0 ? 'Here are the options' : 'No options'}</p>
-    <p>{app.options.length}</p>
-    <p>Age:{app.subtitle}</p>
-    <ol>
-    {
-      app.options.map((option) => {
-        return <li key={option}>{option}</li>
-      })
-    }
-      
-      
-    </ol>
-    <form onSubmit = {onFormSubmit}>
-      <input type="text" name="option" />
-      <button>Add Option</button>
-       <button onClick={onRemoveAll}> Remove All </button>
-      {
-        // numbers.map((number) => {
-        //   return <p key={number}>Number: {number}</p>
-        // })
-      }   
-
-    </form>
+    <h1>Title</h1>
+    <Header />
+    <Action />
   </div>
+
 );
-ReactDOM.render(templateThree, appRoot);
-
-};
-
-render();
 
 
 
+ReactDOM.render(jsx, document.getElementById('app'));
 
 
 
