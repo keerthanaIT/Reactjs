@@ -78,6 +78,52 @@ var Action = function (_React$Component2) {
   return Action;
 }(React.Component);
 
+var Option = function (_React$Component3) {
+  _inherits(Option, _React$Component3);
+
+  function Option() {
+    _classCallCheck(this, Option);
+
+    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+  }
+
+  _createClass(Option, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Example task for using react component'
+      );
+    }
+  }]);
+
+  return Option;
+}(React.Component);
+
+var AddOption = function (_React$Component4) {
+  _inherits(AddOption, _React$Component4);
+
+  function AddOption() {
+    _classCallCheck(this, AddOption);
+
+    return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+  }
+
+  _createClass(AddOption, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Example task for additional options in reactjs'
+      );
+    }
+  }]);
+
+  return AddOption;
+}(React.Component);
+
 var jsx = React.createElement(
   'div',
   null,
@@ -87,7 +133,9 @@ var jsx = React.createElement(
     'Title'
   ),
   React.createElement(Header, null),
-  React.createElement(Action, null)
+  React.createElement(Action, null),
+  React.createElement(Option, null),
+  React.createElement(AddOption, null)
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));
