@@ -61,7 +61,21 @@ class AddOption extends React.Component {
     return (
     <div>
       Example task for additional options in reactjs
+     <Option1 />
     </div>
+    );
+  }
+}
+
+// Exampletask
+
+class Option1 extends React.Component {
+  render(){
+    return (
+    <div>
+      Option One React Component here
+    </div>
+
     );
   }
 }

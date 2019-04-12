@@ -142,12 +142,38 @@ var AddOption = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Example task for additional options in reactjs'
+        'Example task for additional options in reactjs',
+        React.createElement(Option1, null)
       );
     }
   }]);
 
   return AddOption;
+}(React.Component);
+
+// Exampletask
+
+var Option1 = function (_React$Component6) {
+  _inherits(Option1, _React$Component6);
+
+  function Option1() {
+    _classCallCheck(this, Option1);
+
+    return _possibleConstructorReturn(this, (Option1.__proto__ || Object.getPrototypeOf(Option1)).apply(this, arguments));
+  }
+
+  _createClass(Option1, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Option One React Component here'
+      );
+    }
+  }]);
+
+  return Option1;
 }(React.Component);
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
