@@ -53,9 +53,13 @@ class Action extends React.Component {
 
 
 class Option extends React.Component {
+  onClickRemove(){
+    alert('Remove all event');
+  }
   render(){
     return (
     <div>
+    <button onClick={this.onClickRemove}>Remove All</button>
     {
       // this.probs.options.map[(options) => <p key={options}>{options}</p>]
      this.probs.options.map((option) => <Option key={option} optionText={option})
