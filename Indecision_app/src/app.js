@@ -70,6 +70,10 @@ class Action extends React.Component {
 
 
 class Option extends React.Component {
+  constructor(probs){
+    super(probs);
+    this.onClickRemove = this.onClickRemove.bind;
+  }
   onClickRemove(){
     alert('Remove all event');
   }
