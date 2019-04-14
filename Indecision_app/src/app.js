@@ -2,7 +2,7 @@ class IndecisionApp extends React.Component {
   render(){
     return (
       <div>
-        <Header />
+        <Header title="Indecision Apps"/>
         <Action />
         <Option />
         <AddOption />
@@ -22,7 +22,7 @@ class Header extends React.Component {
   render(){
     return (
     <div>
-      <h1>Indecision</h1>
+      <h1>{this.probs.title}</h1>
       <h2>This is a Ubundu OS Computer</h2>
       <p>This is From  header</p>   
     </div>
