@@ -1,10 +1,13 @@
 class IndecisionApp extends React.Component {
   render(){
+    const title = "Indecision";
+    const subtitle = "This is a subtitle for using probs concept";
+    const options = ["one","too","three"];
     return (
       <div>
-        <Header title="Indecision Apps"/>
+        <Header title={title} subtitle={subtitle}/>
         <Action />
-        <Option />
+        <Option options={options}/>
         <AddOption />
       </div>
       );
@@ -23,7 +26,7 @@ class Header extends React.Component {
     return (
     <div>
       <h1>{this.probs.title}</h1>
-      <h2>This is a Ubundu OS Computer</h2>
+      <h2>{this.probs.subtitle}</h2>
       <p>This is From  header</p>   
     </div>
     );
@@ -51,6 +54,7 @@ class Option extends React.Component {
     return (
     <div>
       Example task for using react component
+      {this.probs.options.length}
     </div>
     );
   }
