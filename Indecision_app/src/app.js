@@ -36,10 +36,13 @@ class Header extends React.Component {
 
 
 class Action extends React.Component {
+  onClickAlert(){
+    alert('example for event handler');
+  }
   render(){
     return(
     <div>
-      <button>this is button</button>
+      <button onClick={this.onClickAlert}>this is button</button>
        <p>This is from Actions</p>;
     </div>
     );
