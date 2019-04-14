@@ -16,15 +16,20 @@ console.log(getName());
 
 
 class IndecisionApp extends React.Component {
+  constructor(probs){
+    super(probs);
+    this.state = {
+      options: ["four","five", "six"]
+    }
+  }
   render(){
     const title = "Indecision";
     const subtitle = "This is a subtitle for using probs concept";
-    const options = ["one","too","three"];
     return (
       <div>
         <Header title={title} subtitle={subtitle}/>
         <Action />
-        <Option options={options}/>
+        <Option options={this.stateoptions}/>
         <AddOption />
       </div>
       );
