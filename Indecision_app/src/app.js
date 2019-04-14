@@ -54,8 +54,10 @@ class Option extends React.Component {
     return (
     <div>
     {
-      this.probs.options.map[(options) => <p key={options}>{options}</p>]
+      // this.probs.options.map[(options) => <p key={options}>{options}</p>]
+     this.probs.options.map((option) => <Option key={option} optionText={option})
     }
+
 
 
       // Example task for using react component
@@ -69,7 +71,8 @@ class AddOption extends React.Component {
   render() {
     return (
     <div>
-      Example task for additional options in reactjs
+      {this.probs.optionText}
+      // Example task for additional options in reactjs
      <Option1 />
     </div>
     );
