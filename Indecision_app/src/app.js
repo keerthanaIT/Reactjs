@@ -1,3 +1,20 @@
+const obj = {
+  name:'examplename',
+  getName(){
+    return this.name;
+  }
+};
+
+const getName = obj.getName.bind({name:'Tommy'});
+console.log(getName());
+
+
+
+
+
+
+
+
 class IndecisionApp extends React.Component {
   render(){
     const title = "Indecision";
@@ -59,7 +76,7 @@ class Option extends React.Component {
   render(){
     return (
     <div>
-    <button onClick={this.onClickRemove}>Remove All</button>
+    <button onClick={this.onClickRemove.bind(this)}>Remove All</button>
     {
       // this.probs.options.map[(options) => <p key={options}>{options}</p>]
      this.probs.options.map((option) => <Option key={option} optionText={option})
