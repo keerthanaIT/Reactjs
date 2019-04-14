@@ -53,8 +53,13 @@ class Option extends React.Component {
   render(){
     return (
     <div>
-      Example task for using react component
-      {this.probs.options.length}
+    {
+      this.probs.options.map[(options) => <p key={options}>{options}</p>]
+    }
+
+
+      // Example task for using react component
+      // {this.probs.options.length}
     </div>
     );
   }
