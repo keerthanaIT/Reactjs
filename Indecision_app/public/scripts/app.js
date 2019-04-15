@@ -23,10 +23,10 @@ console.log(getName());
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
-  function IndecisionApp(probs) {
+  function IndecisionApp(props) {
     _classCallCheck(this, IndecisionApp);
 
-    var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, probs));
+    var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
@@ -55,7 +55,7 @@ var IndecisionApp = function (_React$Component) {
     key: 'render',
     value: function render() {
       var title = "Indecision";
-      var subtitle = "This is a subtitle for using probs concept";
+      var subtitle = "This is a subtitle for using props concept";
       return React.createElement(
         'div',
         null,
@@ -136,7 +136,7 @@ var Action = function (_React$Component3) {
         React.createElement(
           'button',
           (_React$createElement = { onClick: this.onClickAlert
-          }, _defineProperty(_React$createElement, 'onClick', this.onClickAlert), _defineProperty(_React$createElement, 'disabled', !this.prob.hasOptions), _React$createElement),
+          }, _defineProperty(_React$createElement, 'onClick', this.onClickAlert), _defineProperty(_React$createElement, 'disabled', !this.prop.hasOptions), _React$createElement),
           'this is button'
         ),
         React.createElement(
@@ -165,8 +165,8 @@ var Option = function (_React$Component4) {
     key: 'render',
 
 
-    // constructor(probs){
-    //   super(probs);
+    // constructor(props){
+    //   super(props);
     //   this.onClickRemove = this.onClickRemove.bind;
     // }
     // onClickRemove(){
@@ -182,7 +182,7 @@ var Option = function (_React$Component4) {
           'Remove All'
         ),
         '// Example task for using react component // ',
-        this.probs.options.length
+        this.props.options.length
       );
     }
   }]);
@@ -193,10 +193,10 @@ var Option = function (_React$Component4) {
 var AddOption = function (_React$Component5) {
   _inherits(AddOption, _React$Component5);
 
-  function AddOption(probs) {
+  function AddOption(props) {
     _classCallCheck(this, AddOption);
 
-    var _this5 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, probs));
+    var _this5 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
     _this5.handleAddOption = _this5.handleAddOption.bind(_this5);
     return _this5;
@@ -228,7 +228,7 @@ var AddOption = function (_React$Component5) {
           )
         ),
         '// ',
-        this.probs.optionText,
+        this.props.optionText,
         '// Example task for additional options in reactjs',
         React.createElement(Option1, null)
       );
@@ -265,21 +265,24 @@ var Option1 = function (_React$Component6) {
 
 // stateless function
 
-var User = function User() {
+var User = function User(props) {
   return React.createElement(
     'div',
     null,
     React.createElement(
       'p',
       null,
-      ' Name: '
+      ' Name:',
+      props.name,
+      ' '
     ),
     React.createElement(
       'p',
       null,
-      ' Age: '
+      ' Age: ',
+      props.age
     )
   );
 };
 
-ReactDOM.render(React.createElement(User, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(User, { name: 'tommy', age: 20 }), document.getElementById('app'));

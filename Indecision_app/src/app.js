@@ -16,8 +16,8 @@ console.log(getName());
 
 
 class IndecisionApp extends React.Component {
-  constructor(probs){
-    super(probs);
+  constructor(props){
+    super(props);
     this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
     this.handleAddOption = this.handleAddOption.bind(this);
 
@@ -39,7 +39,7 @@ class IndecisionApp extends React.Component {
   }
   render(){
     const title = "Indecision";
-    const subtitle = "This is a subtitle for using probs concept";
+    const subtitle = "This is a subtitle for using props concept";
     return (
       <div>
         <Header title={title} subtitle={subtitle}/>
@@ -85,7 +85,7 @@ class Action extends React.Component {
     <div>
       <button onClick={this.onClickAlert}
       onClick = {this.onClickAlert}
-      disabled={!this.prob.hasOptions}
+      disabled={!this.prop.hasOptions}
 
 
 
@@ -101,8 +101,8 @@ class Action extends React.Component {
 
 class Option extends React.Component {
 
-  // constructor(probs){
-  //   super(probs);
+  // constructor(props){
+  //   super(props);
   //   this.onClickRemove = this.onClickRemove.bind;
   // }
   // onClickRemove(){
@@ -113,22 +113,22 @@ class Option extends React.Component {
     <div>
     <button onClick={this.onClickRemove.bind(this)}>Remove All</button>
     {
-      // this.probs.options.map[(options) => <p key={options}>{options}</p>]
-     // this.probs.options.map((option) => <Option key={option} optionText={option})
+      // this.props.options.map[(options) => <p key={options}>{options}</p>]
+     // this.props.options.map((option) => <Option key={option} optionText={option})
     }
 
 
 
       // Example task for using react component
-      // {this.probs.options.length}
+      // {this.props.options.length}
     </div>
     );
   }
 }
 
 class AddOption extends React.Component {
-  constructor(probs){
-    super(probs);
+  constructor(props){
+    super(props);
     this.handleAddOption = this.handleAddOption.bind(this);
   }
   handleAddOption(e){
@@ -149,7 +149,7 @@ class AddOption extends React.Component {
 
 
 
-      // {this.probs.optionText}
+      // {this.props.optionText}
       // Example task for additional options in reactjs
      <Option1 />
     </div>
@@ -177,11 +177,11 @@ class Option1 extends React.Component {
 
 // stateless function
 
-const User = () =>{
+const User = (props) =>{
   return(
   <div>
-    <p> Name: </p>
-    <p> Age: </p>
+    <p> Name:{props.name} </p>
+    <p> Age: {props.age}</p>
   </div>
 
   )
@@ -194,7 +194,7 @@ const User = () =>{
 
 
 
-ReactDOM.render(<User />, document.getElementById('app'));
+ReactDOM.render(<User name="tommy" age={20}/>, document.getElementById('app'));
 
 
 
