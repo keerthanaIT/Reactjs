@@ -74,14 +74,14 @@ var IndecisionApp = function (_React$Component) {
   return IndecisionApp;
 }(React.Component);
 
-var Header = function Header() {
+var Header = function Header(props) {
   return React.createElement(
     'div',
     null,
     React.createElement(
       'h1',
       null,
-      'Index'
+      props.title
     ),
     React.createElement(
       'h2',
@@ -94,6 +94,10 @@ var Header = function Header() {
       'This is From  header'
     )
   );
+};
+
+Header.defaultProps = {
+  title: 'Indecision'
 };
 
 // class Header extends React.Component {
@@ -283,5 +287,8 @@ var User = function User(props) {
     )
   );
 };
+User.defaultProps = {
+  name: 'dataaaa'
+};
 
-ReactDOM.render(React.createElement(User, { name: 'tommy', age: 20 }), document.getElementById('app'));
+ReactDOM.render(React.createElement(User, { age: 20 }), document.getElementById('app'));

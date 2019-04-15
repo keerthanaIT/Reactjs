@@ -60,14 +60,19 @@ class IndecisionApp extends React.Component {
 
 
 
-const Header = () => {
+const Header = (props) => {
     return (
     <div>
-      <h1>Index</h1>
+      <h1>{props.title}</h1>
       <h2>Sub Index</h2>
       <p>This is From  header</p>   
     </div>
     );
+};
+
+
+Header.defaultProps = {
+  title: 'Indecision'
 };
 
 // class Header extends React.Component {
@@ -194,6 +199,9 @@ const User = (props) =>{
 
   )
 }
+User.defaultProps = {
+  name:'default name '
+}
 
 
 
@@ -202,7 +210,7 @@ const User = (props) =>{
 
 
 
-ReactDOM.render(<User name="tommy" age={20}/>, document.getElementById('app'));
+ReactDOM.render(<User age={20}/>, document.getElementById('app'));
 
 
 
