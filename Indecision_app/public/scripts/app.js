@@ -43,6 +43,7 @@ var IndecisionApp = function (_React$Component) {
       this.setState(function () {
         return {
           options: []
+
         };
       });
     }
