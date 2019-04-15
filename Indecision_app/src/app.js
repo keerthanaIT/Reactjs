@@ -22,7 +22,7 @@ class IndecisionApp extends React.Component {
     this.handleAddOption = this.handleAddOption.bind(this);
 
     this.state = {
-      options: ["four","five", "six"]
+      options: props.options
     }
   }
   handleDeleteOptions(){
@@ -57,6 +57,9 @@ class IndecisionApp extends React.Component {
 
 
 
+IndecisionApp.defaultProps = {
+  options:[]
+};
 
 
 
@@ -210,7 +213,8 @@ User.defaultProps = {
 
 
 
-ReactDOM.render(<User age={20}/>, document.getElementById('app'));
+// ReactDOM.render(<User age={20}/>, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp options={['options one','options two']}/>, document.getElementById('app'));
 
 
 

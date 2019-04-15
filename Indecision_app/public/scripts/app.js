@@ -32,7 +32,7 @@ var IndecisionApp = function (_React$Component) {
     _this.handleAddOption = _this.handleAddOption.bind(_this);
 
     _this.state = {
-      options: ["four", "five", "six"]
+      options: props.options
     };
     return _this;
   }
@@ -73,6 +73,10 @@ var IndecisionApp = function (_React$Component) {
 
   return IndecisionApp;
 }(React.Component);
+
+IndecisionApp.defaultProps = {
+  options: []
+};
 
 var Header = function Header(props) {
   return React.createElement(
@@ -288,7 +292,7 @@ var User = function User(props) {
   );
 };
 User.defaultProps = {
-  name: 'dataaaa'
-};
+  name: 'default name '
 
-ReactDOM.render(React.createElement(User, { age: 20 }), document.getElementById('app'));
+  // ReactDOM.render(<User age={20}/>, document.getElementById('app'));
+};ReactDOM.render(React.createElement(IndecisionApp, { options: ['options one', 'options two'] }), document.getElementById('app'));
