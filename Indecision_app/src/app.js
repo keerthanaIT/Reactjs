@@ -60,10 +60,7 @@ class IndecisionApp extends React.Component {
 
 
 
-
-
-class Header extends React.Component {
-  render(){
+const Header = () => {
     return (
     <div>
       <h1>Index</h1>
@@ -71,9 +68,20 @@ class Header extends React.Component {
       <p>This is From  header</p>   
     </div>
     );
+};
+
+// class Header extends React.Component {
+//   render(){
+//     return (
+//     <div>
+//       <h1>Index</h1>
+//       <h2>Sub Index</h2>
+//       <p>This is From  header</p>   
+//     </div>
+//     );
     
-  }
-}
+//   }
+// }
 
 
 class Action extends React.Component {
