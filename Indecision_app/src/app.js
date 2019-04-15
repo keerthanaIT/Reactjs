@@ -19,6 +19,8 @@ class IndecisionApp extends React.Component {
   constructor(probs){
     super(probs);
     this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
+    this.handleAddOption = this.handleAddOption.bind(this);
+
     this.state = {
       options: ["four","five", "six"]
     }
@@ -32,6 +34,9 @@ class IndecisionApp extends React.Component {
     })
 
   }
+  handleAddOption(option){
+    console.log(option);
+  }
   render(){
     const title = "Indecision";
     const subtitle = "This is a subtitle for using probs concept";
@@ -42,7 +47,9 @@ class IndecisionApp extends React.Component {
         <Option options={this.state.options}
         handleDeleteOptions={this.handleDeleteOptions}
         />
-        <AddOption />
+        <AddOption 
+          handleAddOption={this.handleAddOption}
+         />
       </div>
       );
   }
@@ -124,7 +131,7 @@ class AddOption extends React.Component {
     e.preventDefault();
     const option = e.target.elements.option.value.trim();
     if(option){
-      alert(option);
+      this.props.handleAddOption(option);
     }
   }
   render() {
