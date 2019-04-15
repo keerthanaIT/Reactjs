@@ -35,7 +35,7 @@ class IndecisionApp extends React.Component {
 
   }
   handleAddOption(option){
-    console.log(option);
+    this.setState
   }
   render(){
     const title = "Indecision";
@@ -175,12 +175,26 @@ class Option1 extends React.Component {
 
 
 
+// stateless function
+
+const User = () =>{
+  return(
+  <div>
+    <p> Name: </p>
+    <p> Age: </p>
+  </div>
+
+  )
+}
 
 
 
 
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+
+
+
+ReactDOM.render(<User />, document.getElementById('app'));
 
 
 

@@ -49,7 +49,7 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: 'handleAddOption',
     value: function handleAddOption(option) {
-      console.log(option);
+      this.setState;
     }
   }, {
     key: 'render',
@@ -263,4 +263,23 @@ var Option1 = function (_React$Component6) {
   return Option1;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+// stateless function
+
+var User = function User() {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'p',
+      null,
+      ' Name: '
+    ),
+    React.createElement(
+      'p',
+      null,
+      ' Age: '
+    )
+  );
+};
+
+ReactDOM.render(React.createElement(User, null), document.getElementById('app'));
