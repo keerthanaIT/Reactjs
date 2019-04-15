@@ -29,6 +29,8 @@ var IndecisionApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, probs));
 
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
+    _this.handleAddOption = _this.handleAddOption.bind(_this);
+
     _this.state = {
       options: ["four", "five", "six"]
     };
@@ -62,7 +64,9 @@ var IndecisionApp = function (_React$Component) {
         React.createElement(Option, { options: this.state.options,
           handleDeleteOptions: this.handleDeleteOptions
         }),
-        React.createElement(AddOption, null)
+        React.createElement(AddOption, {
+          handleAddOption: this.handleAddOption
+        })
       );
     }
   }]);
@@ -189,10 +193,13 @@ var Option = function (_React$Component4) {
 var AddOption = function (_React$Component5) {
   _inherits(AddOption, _React$Component5);
 
-  function AddOption() {
+  function AddOption(probs) {
     _classCallCheck(this, AddOption);
 
-    return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+    var _this5 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, probs));
+
+    _this5.handleAddOption = _this5.handleAddOption.bind(_this5);
+    return _this5;
   }
 
   _createClass(AddOption, [{
@@ -201,7 +208,7 @@ var AddOption = function (_React$Component5) {
       e.preventDefault();
       var option = e.target.elements.option.value.trim();
       if (option) {
-        alert(option);
+        this.props.handleAddOption(option);
       }
     }
   }, {

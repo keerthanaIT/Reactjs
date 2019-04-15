@@ -127,6 +127,10 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  constructor(probs){
+    super(probs);
+    this.handleAddOption = this.handleAddOption.bind(this);
+  }
   handleAddOption(e){
     e.preventDefault();
     const option = e.target.elements.option.value.trim();
