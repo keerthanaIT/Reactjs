@@ -18,9 +18,19 @@ console.log(getName());
 class IndecisionApp extends React.Component {
   constructor(probs){
     super(probs);
+    this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
     this.state = {
       options: ["four","five", "six"]
     }
+  }
+  handleDeleteOptions(){
+    this.setState(() => {
+      return {
+        options:[]
+      }
+
+    })
+
   }
   render(){
     const title = "Indecision";
@@ -29,7 +39,9 @@ class IndecisionApp extends React.Component {
       <div>
         <Header title={title} subtitle={subtitle}/>
         <Action hasOptions = {this.state.options.length > 0}/>
-        <Option options={this.stateoptions}/>
+        <Option options={this.state.options}
+        handleDeleteOptions={this.handleDeleteOptions}
+        />
         <AddOption />
       </div>
       );
@@ -47,8 +59,8 @@ class Header extends React.Component {
   render(){
     return (
     <div>
-      <h1>{this.probs.title}</h1>
-      <h2>{this.probs.subtitle}</h2>
+      <h1>Index</h1>
+      <h2>Sub Index</h2>
       <p>This is From  header</p>   
     </div>
     );
@@ -81,20 +93,21 @@ class Action extends React.Component {
 
 
 class Option extends React.Component {
-  constructor(probs){
-    super(probs);
-    this.onClickRemove = this.onClickRemove.bind;
-  }
-  onClickRemove(){
-    alert('Remove all event');
-  }
+
+  // constructor(probs){
+  //   super(probs);
+  //   this.onClickRemove = this.onClickRemove.bind;
+  // }
+  // onClickRemove(){
+  //   alert('Remove all event');
+  // }
   render(){
     return (
     <div>
     <button onClick={this.onClickRemove.bind(this)}>Remove All</button>
     {
       // this.probs.options.map[(options) => <p key={options}>{options}</p>]
-     this.probs.options.map((option) => <Option key={option} optionText={option})
+     // this.probs.options.map((option) => <Option key={option} optionText={option})
     }
 
 
