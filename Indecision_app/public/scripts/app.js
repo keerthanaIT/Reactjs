@@ -174,9 +174,11 @@ var IndecisionApp = function (_React$Component) {
   return IndecisionApp;
 }(React.Component);
 
-IndecisionApp.defaultProps = {
-  options: []
-};
+// setting the default value for indecisionapp class
+// IndecisionApp.defaultProps = {
+//   options:[]
+// };
+
 
 //header
 
