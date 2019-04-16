@@ -1,6 +1,10 @@
 const square = (x) =>  x *x ;
 
-export { square };
+
+
+const add = (a,b) => a + b ;
+
+export { square , add };
 
 
 console.log("utilis data ------");
