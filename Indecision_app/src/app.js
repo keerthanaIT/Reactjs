@@ -1,12 +1,12 @@
-const obj = {
-  name:'examplename',
-  getName(){
-    return this.name;
-  }
-};
+// const obj = {
+//   name:'examplename',
+//   getName(){
+//     return this.name;
+//   }
+// };
 
-const getName = obj.getName.bind({name:'Tommy'});
-console.log(getName());
+// const getName = obj.getName.bind({name:'Tommy'});
+// console.log(getName());
 
 
 
@@ -20,15 +20,18 @@ class IndecisionApp extends React.Component {
     super(props);
     this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
     this.handleAddOption = this.handleAddOption.bind(this);
+    this.handlePick =this.handlePick.bind(this);
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+
 
     this.state = {
       options: props.options
-    }
+    };
   }
 
-
-  componentDidMount(){
+componentDidMount(){
     console.log('fetching data');
+
   }
 
 componentDidUpdate(prevProps, prevState){
@@ -41,36 +44,84 @@ componentWillUnmount()
 }
 
 
-  handleDeleteOptions(){
-    this.setState(() => ({
-options:[]
-
-}));
 
 
 
 
 
 
-  }
+
+
+
+  
+handleDeleteOptions(){
+  this.setState(() => ({options: [] }));
+}
+handleDeleteOptions(optionToRemove){
+  this.setState((prevState) => ({
+    options:prevState.options.filter((option) => optionToRemove !== option)
+  }));
+}
+handlePick() {
+  const randomNum = Math.floor(Math.random() * this.stater.options.length);
+  const option = this.state.options[randomNum];
+  alert(option);
+}
+
+//   componentDidMount(){
+//     console.log('fetching data');
+
+//   }
+
+// componentDidUpdate(prevProps, prevState){
+//   console.log('componentDidUpdate');
+// }
+
+// componentWillUnmount()
+// {
+//   console.log('componentWillUnmount');
+// }
+
+
+//   handleDeleteOptions(){
+//     this.setState(() => ({
+// options:[]
+
+// }));
+
+//   }
+
   handleAddOption(option){
-    this.setState
+    if(option){
+      return 'enter vaild value';
+    }else if (this.state.options.indexOf(option)> -1){
+      return 'this options already exist';
+    }
+    this.setState((prevState) => ({
+      options:prevState.options.concat(option)
+    }));
   }
   render(){
-    const title = "Indecision";
+    // const title = "Indecision";
     const subtitle = "This is a subtitle for using props concept";
     return (
       <div>
-        <Header title={title} subtitle={subtitle}/>
-        <Action hasOptions = {this.state.options.length > 0}/>
-        <Option options={this.state.options}
+        <Header subtitle={subtitle}/>
+        <Action
+         hasOptions = {this.state.options.length > 0}
+        handlePick={this.handlePick}
+         />
+        }
+        <Options 
+        options={this.state.options}
         handleDeleteOptions={this.handleDeleteOptions}
+        handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption 
           handleAddOption={this.handleAddOption}
          />
       </div>
-      );
+      ); 
   }
 }
 
@@ -85,8 +136,10 @@ IndecisionApp.defaultProps = {
 const Header = (props) => {
     return (
     <div>
+
       <h1>{props.title}</h1>
-      <h2>Sub Index</h2>
+      {probs.subtitle && <h2>{props.subtitle} </h2>}
+      
       <p>This is From  header</p>   
     </div>
     );
@@ -111,26 +164,40 @@ Header.defaultProps = {
 // }
 
 
-class Action extends React.Component {
-  onClickAlert(){
-    alert('example for event handler');
-  }
-  render(){
-    return(
-    <div>
-      <button onClick={this.onClickAlert}
-      onClick = {this.onClickAlert}
-      disabled={!this.prop.hasOptions}
+
+const Action = (props) => {
+  return (
+  <div>
+      <button onClick={props.handlePick}
+      disabled={!prop.hasOptions}
 
 
 
       >this is button</button>
        <p>This is from Actions</p>;
     </div>
-    );
-    
-  }
+
+  )
 }
+
+
+
+
+
+
+
+
+// class Action extends React.Component {
+//   onClickAlert(){
+//     alert('example for event handler');
+//   }
+//   render(){
+//     return(
+    
+//     );
+    
+//   }
+// }
 
 
 
